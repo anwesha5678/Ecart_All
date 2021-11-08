@@ -1,0 +1,187 @@
+<!-- @format -->
+<%- include ('./header'); -%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <script>
+      function validation() {
+        if (document.getElementById("fname").value.length == 0) {
+          document.getElementById("message").innerHTML =
+            "<em> You did not enter your first name </em>";
+          return false;
+        } else return true;
+      }
+
+      function myFunction() {
+        var customername = document.getElementById("fname").value;
+        var dateObject = new Date();
+        const month = dateObject.toLocaleString("default", { month: "long" });
+        var weekday = dateObject.toLocaleString("default", { weekday: "long" });
+        var hours = dateObject.getHours();
+        var mins = dateObject.getMinutes();
+        var daymsg = "";
+        var totalmin = hours * 60 + mins;
+        var remainmins = 24 * 60 - totalmin;
+        if (hours < 11) {
+          daymsg = "Good Morning";
+        }
+        if (hours >= 11 && hours < 14) {
+          daymsg = "Good Day";
+        }
+        if (hours >= 14 && hours < 18) {
+          daymsg = "Good Afternoon";
+        }
+        if (hours >= 18) {
+          daymsg = "Good Evening";
+        }
+
+        var welcomemsg =
+          "Greetings " +
+          customername +
+          "! We hope you are having a wonderful " +
+          daymsg +
+          "<br>" +
+          "<br>" +
+          "Today's date is " +
+          weekday +
+          " " +
+          month +
+          "," +
+          dateObject.getDate() +
+          "," +
+          dateObject.getFullYear() +
+          " and a total of " +
+          hours +
+          " hours and " +
+          mins +
+          " minutes have passed." +
+          "<br>" +
+          "<br>" +
+          " Hope you enjoy the remaining " +
+          remainmins +
+          " minutes left in the day!" +
+          " Here is our Quote of the day: " +
+          "<br>" +
+          "<br>" +
+          "~The reality about transportation is that it's future-oriented. If we're planning for what we have, we're behind the curve.~ " +
+          "<br>" +
+          "<br>" +
+          " by Anthony Foxx";
+        console.log(welcomemsg);
+        document.getElementById("demo").innerHTML = welcomemsg;
+      }
+
+      function overMessage() {
+        console.log("overMessage");
+        document.getElementById("demo").style.backgroundColor = "lightblue";
+      }
+
+      function outMessage() {
+        console.log("outMessage");
+        document.getElementById("demo").style.backgroundColor = "lightblue";
+      }
+    </script>
+  </head>
+
+  <body style="background-color: white">
+    <div class="container-fluid">
+      <div class="container mt-3">
+    
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="../images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          DP Transport
+        </a>
+      <b>
+        <a href="/dashboard"> Home </a> &nbsp; &nbsp;
+        <a href="/dashboard/service"> Services </a> &nbsp; &nbsp;
+        <a href="/dashboard/carrier"> Career </a> &nbsp; &nbsp;
+        <a href="/dashboard/news"> Trucking Industry News </a> &nbsp; &nbsp;
+        <a href="/dashboard/contact"> Contact US </a> &nbsp; &nbsp;
+        <a href="/dashboard/about"> About US </a>
+      </b>
+    </nav>
+    <br> 
+    <br>
+    <main>
+      <p>
+        In Denver at the McLeod Software user conference, Aug. 26, a panel of
+        transportation leaders discussed the future. All were skeptical that
+        autonomous trucks would solve the driver shortage anytime soon, if
+        ever at all.
+      </p>
+
+          <h2>Transport Industry News and Lastest Update</h2>
+          <p>Our Top Leaders</p>
+          <div class="media border p-3">
+            <img
+              src="../images/img_avatar3.png"
+              alt="John Doe"
+              class="mr-3 mt-3 rounded-circle"
+              style="width: 60px"
+            />
+            <div class="media-body">
+              <h4>
+                Bob Costello <small><i>Posted on Aug. 26, 2016</i></small>
+              </h4>
+              <p>
+                “If things do not change, we could hit a 160,000 shortage in 10
+                years. If that happens, we are in for a world of hurt,”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="container-fluid">
+        <div class="container mt-3">
+          <div class="media border p-3">
+            <img
+              src="../images/img_avatar4.png"
+              alt="John Doe"
+              class="mr-3 mt-3 rounded-circle"
+              style="width: 60px"
+            />
+            <div class="media-body">
+              <h4>
+                Barry Pottle <small><i>Posted on February 19, 2016</i></small>
+              </h4>
+              <p>
+                “There is a lot of opportunity out there, a lot of drivers want
+                to become owner-operators. We really need to bring younger
+                drivers in.”
+              </p>
+            </div>
+          
+        </div>
+
+        <br>
+
+        <h4>Enter your name to view the quote of the day</h4>
+
+        <div id="contentArea">
+          <label for="testButton"> Please enter your first name: </label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="your first name"
+          />
+          <span id="message"></span>
+
+          <button type="button" class="btn btn-primary" onclick="myFunction()">
+            Display Gretting Quote
+          </button>
+          <div onmouseover="overMessage()" onmouseout="outMessage()">
+            <p id="demo"></p>
+          </div>
+        </div>
+
+        <footer>
+          <small><i> Copyright &copy;DP Transport Limited. </i></small>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

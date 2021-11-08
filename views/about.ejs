@@ -1,0 +1,102 @@
+<!-- @format -->
+<%- include ('./header'); -%>
+  <link rel="stylesheet" href="/css/link.css">
+  <style>
+  p:hover {
+    background-color:lightblue;
+  }
+  </style>
+ 
+
+  <body style="background-color: white">
+    <div class="container-fluid">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="../images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          DP Transport
+        </a>
+      <b>
+        <a href="/dashboard"> Home </a> &nbsp; &nbsp;
+        <a href="/dashboard/service"> Services </a> &nbsp; &nbsp;
+        <a href="/dashboard/carrier"> Career </a> &nbsp; &nbsp;
+        <a href="/dashboard/news"> Trucking Industry News </a> &nbsp; &nbsp;
+        <a href="/dashboard/contact"> Contact US </a> &nbsp; &nbsp;
+        <a href="/dashboard/about"> About US </a>
+      </b>
+    </nav>
+    </div>
+    <main>
+
+
+        <div class="container-fluid">
+            <h1>Beyond Ordinary</h1>
+                 
+
+            <div class="container-fluid" >    
+              <div class="row">
+                <div class="col-sm-6 ">
+                  <p> <strong> our ethics and code </strong> 1. Honest and Candid Conduct
+                  Each director, officer, and employee of the Company owes a duty to the Company to act with integrity. Integrity requires, among other things, being honest and candid. Deceit and subordination of principle are inconsistent with integrity. In this regard, each director, officer, and employee should satisfy the following with respect to the Company:
+                  • Act with integrity, including being honest and candid while still maintaining the confidentiality of information when required or consistent with the Company’s policies.
+                  • Observe both the form and spirit of laws and governmental rules and regulations, accounting standards, and Company policies.
+                  • Adhere to a high standard of business ethics.
+                  2. Compliance with Laws, Rules, and Regulations
+                  Obeying the law, both in letter and in spirit, is the foundation on which the Company’s ethical standards are built. All directors, officers, and employees should respect and obey all laws, rules, and regulations applicable to the business and operations of the Company. Although directors, officers, and employees are not expected to know all of the details of these laws, rules, and regulations, it is important to know enough to determine when to seek advice from supervisors, managers, officers, or other appropriate Company personnel.
+                </p>
+              </div>
+                <div class="col-sm-6 " id="demo">
+                <p> <strong> our contribution </strong> Oil and gas are also industries reliant on trucking for transporting refined fuel to gas stations, loading gas pipes and fittings, and more. These services make the rest of the transport industry and most vehicular travel possible in the first place. And since so many manufacturers operate just in time (or JIT) manufacturing schedules, they need truck drivers to help avoid being fined for delivering final products late.
+                The construction and home renovation industries rely on trucking to move products to and from stores or customers’ homes. These essential supplies include steel, lumber, concrete, and hardware that need to go to worksites, homes, stores, and warehouses. Some cartage companies also deliver heavy industrial or construction equipment, as well as portable buildings for worksite office space.
+                Every product and service that everyone uses is made available to us by truck drivers. Even as new methods of shipping evolve and new technology like driving assistance and renewable energy continue to develop, trucking is still a mainstay of the American and world economies. As the economy continues to march along, the trucking industry will continue to play a vital role in its growth.
+              </p>
+            </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <div class="container">
+            <h2>Our Achievements List</h2>
+            <ul class="list-group">
+              <li class="list-group-item list-group-item-light">Steering of Rail</li>
+              <li class="list-group-item list-group-item-primary">Steering of Flows</li>
+              <li class="list-group-item list-group-item-light">Managing a Distribution Platform</li>
+              <li class="list-group-item list-group-item-primary">Steering of River Groupage</li>
+              <li class="list-group-item list-group-item-light">Steering of Road</li>
+              <li class="list-group-item list-group-item-primary">Steering of Handling Flows</li>
+            </ul>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="container">
+            <h2>Meet Our Team</h2>
+            <p>Leaders that work along with the team</p>            
+            <table class="table table-dark table-hover">
+              <thead>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let item of data) {%> 
+                <tr>
+                  <td><%= item.firstName %></td>
+                  <td><%= item.lastName %></td>
+                  <td><%= item.email %></td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+
+
+      <footer>
+        <small><i> Copyright &copy;DP Transport Limited. </i></small>
+      </footer>
+  </body>
+

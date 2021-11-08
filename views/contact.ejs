@@ -1,0 +1,138 @@
+
+<%- include ('./header'); -%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>5.3D: Website Project of Pavandeep Kaur</title>
+        
+        
+        <script>
+
+            function validation(){
+                if (document.getElementById("fname").value.length == 0){
+                    document.getElementById("message").style.color = "black";
+                    document.getElementById("message").innerHTML = "<em> You did not enter your first name </em>";
+                    
+                } else {
+                    if (document.getElementById("fname").value.length > 0) {
+                        document.getElementById("message").style.color = "green";
+                        document.getElementById("message").innerHTML = "<em> Valid </em>";
+                    }
+                }
+                if (document.getElementById("email").value.length == 0){
+                    document.getElementById("message2").style.color = "black";
+                    document.getElementById("message2").innerHTML = "<em> Please enter Email </em>";
+                } 
+                if (document.getElementById("email").value.length > 0){
+                    if  (!document.getElementById("email").value.includes("@deakin.edu.au")) {
+                        document.getElementById("message2").style.color = "black";
+                        document.getElementById("message2").innerHTML = "<em> Please enter format of @deakin.edu.au </em>";
+                    } else {
+                        document.getElementById("message2").style.color = "green";
+                        document.getElementById("message2").innerHTML = "<em> Valid </em>";
+                    }
+                } 
+
+                if (document.getElementById("phone").value.length < 10) {
+                    document.getElementById("message4").style.color = "black";
+                    document.getElementById("message4").innerHTML = "<em> Phone Number should be 10 Digits ";
+                }else {
+                    if (document.getElementById("phone").value.length = 10) {
+                        var phonenumber = document.getElementById("phone").value;
+                        var Numbers = /^[0-9]+$/;
+                        if (phonenumber.match(Numbers)) {
+                            document.getElementById("message4").style.color = "green";
+                            document.getElementById("message4").innerHTML = "<em> Valid </em>";
+                        } else {
+                            //alert("errorphonenumber");
+                            let errormsg = "Contains character ";
+                            let errormsg2 = " Numbers only! "; 
+                            let wrongchar = " ";
+                            let numbers2 = "0123456789";
+                            for (var i = 0; i < phonenumber.length; i++) {
+                                //alert(phonenumber.charAt(i));
+                                
+                                if (numbers2.indexOf(phonenumber.charAt(i)) == -1) {
+                                    //alert("gotthechar");
+                                    //alert(wrongchar);
+                                    wrongchar = phonenumber.substring(i, i+1);
+                                    //Console.log (wrongchar); 
+                                    break;
+                                }
+                                //alert(str.charAt(i));
+                            }
+                            document.getElementById("message4").style.color = "black";
+                            document.getElementById("message4").innerHTML = errormsg + wrongchar + errormsg2;
+                        }
+                    } 
+
+                }
+                 return false;
+            }           
+        </script>
+
+    
+
+
+    </head>
+    <body style="background-color:lightblue">
+      <div class="container-fluid">
+        <section> 
+          <div class="jumbotron">
+          <div class="container-fluid">  
+            <h3 class="display-4">Long-Haul Trucking you can Trust</h3>
+            <p class="font-italic">DP Transport</p>
+          </div>
+        </div>
+        </section>
+    
+        <br>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              <img src="../images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+              DP Transport
+            </a>
+          <b>
+            <a href="/dashboard"> Home </a> &nbsp; &nbsp;
+            <a href="/dashboard/service"> Services </a> &nbsp; &nbsp;
+            <a href="/dashboard/carrier"> Career </a> &nbsp; &nbsp;
+            <a href="/dashboard/news"> Trucking Industry News </a> &nbsp; &nbsp;
+            <a href="/dashboard/contact"> Contact US </a> &nbsp; &nbsp;
+            <a href="/dashboard/about"> About US </a>
+          </b>
+        </nav>
+        <br>
+
+    <div class="container-fluid">
+        <h3>Contact Details</h3>
+        <p> Please enter your contact details and leave the message we will get back to you shortly</p>
+        
+        <form name="myform" method="POST" action="/contact" >
+          <div class="form-group col-md-12">
+            <label for="fname"> Name: </label>
+            <input type="text" id="fname" name="fname"/>  <span id="message"></span>
+          </div>
+          <br>
+          <div class="form-group col-md-12">
+            <label for="email"> Email: </label>
+            <input type="email" id="email" name="email"/> <span id="message2"></span>
+          </div>
+          <br> 
+            <label for="phone">  Number: </label>
+            <input type="text" id="phone" name="phone"/><span id="message4"></span>
+            
+            <br> <br>
+            <textarea name="comment" id="comment" cols="169" rows="3" placeholder="Please enter your feedback here">
+            </textarea>
+
+            <br> <br>
+
+            <button class="btn btn-primary" type="submit">submit</button>
+            <button class="btn btn-primary" type="reset">Reset</button>
+         
+          </form> 
+        
+    </div>
+    </body>
+
+</html>

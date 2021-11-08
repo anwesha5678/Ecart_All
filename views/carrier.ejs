@@ -1,0 +1,191 @@
+<!-- @format -->
+
+<%- include ('./header'); -%>
+
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+
+  <style>
+    #form1 {
+      background-color: #eaeaea;
+      color: black;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+
+    #label1 {
+      float: left;
+      width: 100px;
+      clear: left;
+      text-align: right;
+      padding-right: 10px;
+      margin-top: 10px;
+    }
+
+    #input1,
+    textarea {
+      margin-top: 10px;
+      display: block;
+    }
+
+    #mySubmit {
+      margin-left: 110px;
+    }
+  </style>
+  </head>
+
+  <body style="background-color: lightblue">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="../images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        DP Transport
+      </a>
+      <b>
+        <a href="/dashboard"> Home </a> &nbsp; &nbsp;
+        <a href="/dashboard/service"> Services </a> &nbsp; &nbsp;
+        <a href="/dashboard/carrier"> Career </a> &nbsp; &nbsp;
+        <a href="/dashboard/news"> Trucking Industry News </a> &nbsp; &nbsp;
+        <a href="/dashboard/contact"> Contact US </a> &nbsp; &nbsp;
+        <a href="/dashboard/about"> About US </a>
+      </b>
+    </nav>
+    <main>
+      <div class="container-fluid">
+        <br />
+        <h1>Welcome to Becoming part of DP Transport</h1>
+        <h2>Fill in your details and we will get back to you with opportunities</h2>
+        <br />
+
+        <form id="form1" method="POST" action="/carrier">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Title"> Title</label>
+              <input id="input1" type="text" name="Title" id="Title" />
+              <br />
+              <label for="FirstName"> FirstName</label>
+              <input id="input1" type="text" name="FirstName" id="FirstName" />
+            </div>
+            <br />
+            <div class="form-group col-md-6">
+              <label for="SurName"> SurName</label>
+              <input id="input1" type="text" name="SurName" id="SurName" />
+              <br />
+              <label for="PreName"> Preferred First Name</label>
+              <input id="input1" type="text" name="PreName" id="PreName" />
+            </div>
+          </div>
+          <br />
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputdate"> Date of Birth</label>
+              <br />
+              <input type="date" name="mydate" id="mydate" />
+              <br />
+            </div>
+
+            <div>
+              <div class="form-group col-md-6">
+                Gender <br />
+                <select name="major">
+                  <option value="F">Female</option>
+                  <option value="M">Male</option>
+                  <option value="TG">Transgender</option>
+                  <option value="O">Other</option>
+                  <option value="NULL">Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <!-- <form class="row g-3 col-md-6"> -->
+          <label for="validationDefaultUsername" class="form-label">Email</label>
+          <div class="input-group">
+            <input type="email" name="email" class="form-control" id="validationDefaultUsername"
+              aria-describedby="inputGroupPrepend2" required>
+          </div>
+          <br />
+
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="Phone Number"> Phone Number: </label>
+
+              <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                required><br><br>
+            </div>
+
+            <br>
+            <div class="form-group col-md-6">
+              <label for="country">Country of Resident</label>
+              <input type="text" class="form-control" id="country" name="country" />
+              <br />
+            </div>
+          </div>
+
+          <br>
+          <div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                Type of Work <br />
+                <select name="major">
+                  <option value="1">Office</option>
+                  <option value="2">ON Road</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                Level of Work <br />
+                <select name="major">
+                  <option value="1">Full Time</option>
+                  <option value="2">Part Time</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                Preferred Location of work<br />
+                <select name="major">
+                  <option value="1">Melbourne-Queenland</option>
+                  <option value="2">Melbourne-Sydney</option>
+                  <option value="3">Melbourne-Perth</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <br />
+
+              <br>
+
+              <!-- <form > -->
+              Notes: <br>
+              <textarea name="notes" id="notes" cols="270" rows="4" placeholder="Please leave any notes/details that may be relevant. I.e., and kindly email us your cv with documents license at 
+  pavan@dptransport.com">
+
+  </textarea>
+              <!-- </form> -->
+
+              <br />
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </div>
+          <!-- </form> -->
+        </form>
+    </main>
+    <footer>
+      <small><i> Copyright &copy;DP Transport Limited. </i></small>
+    </footer>
+  </body>
+
+  </html>
